@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		118522E51B654D146C37B793 /* Pods_StickyHeaderTabTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F5A9D89985827063683FE300 /* Pods_StickyHeaderTabTests.framework */; };
+		363D077328D4C01100D05C82 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 363D077228D4C01100D05C82 /* TabBarVC.swift */; };
 		63D6580C4888FF3BF75CE542 /* Pods_StickyHeaderTab.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A46F940585A70FA0604595FD /* Pods_StickyHeaderTab.framework */; };
 		89C8011928D4A37700468B7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8011828D4A37700468B7A /* AppDelegate.swift */; };
 		89C8011D28D4A37700468B7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8011C28D4A37700468B7A /* ViewController.swift */; };
@@ -18,7 +19,6 @@
 		89C8013328D4A37800468B7A /* StickyHeaderTabTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8013228D4A37800468B7A /* StickyHeaderTabTests.swift */; };
 		89C8013D28D4A37800468B7A /* StickyHeaderTabUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8013C28D4A37800468B7A /* StickyHeaderTabUITests.swift */; };
 		89C8013F28D4A37800468B7A /* StickyHeaderTabUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8013E28D4A37800468B7A /* StickyHeaderTabUITestsLaunchTests.swift */; };
-		89C8014C28D4A47F00468B7A /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8014B28D4A47F00468B7A /* TabBarVC.swift */; };
 		C1C73F2B981FDA406A0C5641 /* Pods_StickyHeaderTab_StickyHeaderTabUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C397F80CEFD4A54257A7606B /* Pods_StickyHeaderTab_StickyHeaderTabUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +42,7 @@
 /* Begin PBXFileReference section */
 		0F4E13050189698DD13F5628 /* Pods-StickyHeaderTabTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickyHeaderTabTests.debug.xcconfig"; path = "Target Support Files/Pods-StickyHeaderTabTests/Pods-StickyHeaderTabTests.debug.xcconfig"; sourceTree = "<group>"; };
 		1225F635AE9C05B829E45027 /* Pods-StickyHeaderTab.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickyHeaderTab.release.xcconfig"; path = "Target Support Files/Pods-StickyHeaderTab/Pods-StickyHeaderTab.release.xcconfig"; sourceTree = "<group>"; };
+		363D077228D4C01100D05C82 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		42816B80C497D730BAFAC11A /* Pods-StickyHeaderTabTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickyHeaderTabTests.release.xcconfig"; path = "Target Support Files/Pods-StickyHeaderTabTests/Pods-StickyHeaderTabTests.release.xcconfig"; sourceTree = "<group>"; };
 		45B7A2A16842B3DF7C38C3C2 /* Pods-StickyHeaderTab.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickyHeaderTab.debug.xcconfig"; path = "Target Support Files/Pods-StickyHeaderTab/Pods-StickyHeaderTab.debug.xcconfig"; sourceTree = "<group>"; };
 		49A83D626130AFFA67C11703 /* Pods-StickyHeaderTab-StickyHeaderTabUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickyHeaderTab-StickyHeaderTabUITests.release.xcconfig"; path = "Target Support Files/Pods-StickyHeaderTab-StickyHeaderTabUITests/Pods-StickyHeaderTab-StickyHeaderTabUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -58,7 +59,6 @@
 		89C8013828D4A37800468B7A /* StickyHeaderTabUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StickyHeaderTabUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		89C8013C28D4A37800468B7A /* StickyHeaderTabUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderTabUITests.swift; sourceTree = "<group>"; };
 		89C8013E28D4A37800468B7A /* StickyHeaderTabUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StickyHeaderTabUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		89C8014B28D4A47F00468B7A /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
 		A46F940585A70FA0604595FD /* Pods_StickyHeaderTab.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StickyHeaderTab.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC0F4B98FEFF3051D4FE691B /* Pods-StickyHeaderTab-StickyHeaderTabUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StickyHeaderTab-StickyHeaderTabUITests.debug.xcconfig"; path = "Target Support Files/Pods-StickyHeaderTab-StickyHeaderTabUITests/Pods-StickyHeaderTab-StickyHeaderTabUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C397F80CEFD4A54257A7606B /* Pods_StickyHeaderTab_StickyHeaderTabUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StickyHeaderTab_StickyHeaderTabUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,7 +135,7 @@
 				89C8012628D4A37800468B7A /* LaunchScreen.storyboard */,
 				89C8012928D4A37800468B7A /* Info.plist */,
 				89C8012128D4A37700468B7A /* StickyHeaderTab.xcdatamodeld */,
-				89C8014B28D4A47F00468B7A /* TabBarVC.swift */,
+				363D077228D4C01100D05C82 /* TabBarVC.swift */,
 			);
 			path = StickyHeaderTab;
 			sourceTree = "<group>";
@@ -167,7 +167,6 @@
 				0F4E13050189698DD13F5628 /* Pods-StickyHeaderTabTests.debug.xcconfig */,
 				42816B80C497D730BAFAC11A /* Pods-StickyHeaderTabTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -412,7 +411,7 @@
 			files = (
 				89C8011D28D4A37700468B7A /* ViewController.swift in Sources */,
 				89C8011928D4A37700468B7A /* AppDelegate.swift in Sources */,
-				89C8014C28D4A47F00468B7A /* TabBarVC.swift in Sources */,
+				363D077328D4C01100D05C82 /* TabBarVC.swift in Sources */,
 				89C8012328D4A37700468B7A /* StickyHeaderTab.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

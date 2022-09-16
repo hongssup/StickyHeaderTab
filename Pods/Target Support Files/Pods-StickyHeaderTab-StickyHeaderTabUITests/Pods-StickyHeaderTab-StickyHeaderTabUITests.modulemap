@@ -1,0 +1,6 @@
+framework module Pods_StickyHeaderTab_StickyHeaderTabUITests {
+  umbrella header "Pods-StickyHeaderTab-StickyHeaderTabUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

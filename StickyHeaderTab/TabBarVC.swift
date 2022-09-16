@@ -26,7 +26,7 @@ class TabBarVC: UIViewController {
     private func setupCollectionView() {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
-        
+        self.collectionView.register(TabHeader.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: "tabHeader")
         self.collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         
         self.view.addSubview(collectionView)
@@ -65,15 +65,52 @@ extension TabBarVC: UICollectionViewDataSource {
         }
         return cell
     }
+    
+    //header
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        if kind == UICollectionView.elementKindSectionHeader {
+            guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "tabHeader", for: indexPath) as? TabHeader else { return UICollectionReusableView() }
+            
+            return header
+        }
+        return UICollectionReusableView()
+    }
 }
 
 extension TabBarVC: UICollectionViewDelegateFlowLayout {
+    // header size
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        return (section == 0) ? CGSize.zero : CGSize(width: collectionView.frame.width, height: 44)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = collectionView.frame.width
         if indexPath.section == 0 {
             return CGSize(width: width, height: width)
         } else {
             return CGSize(width: width, height: 800)
+        }
+    }
+}
+
+// MARK: - TabHeader
+class TabHeader: UICollectionReusableView {
+    let tabBarView = TabBarView()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.backgroundColor = .white
+        self.setupView()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupView() {
+        self.addSubview(tabBarView)
+        tabBarView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
     }
 }

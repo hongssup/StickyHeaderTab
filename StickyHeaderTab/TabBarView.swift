@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol TabBarViewDelegate: AnyObject {
+    func tabControl(didChange index: Int)
+}
+
 class TabBarView: UIView {
     lazy var dividerView: UIView = {
         let view = UIView()
@@ -31,6 +35,8 @@ class TabBarView: UIView {
     let unselectedFont = UIFont.systemFont(ofSize: 16)
     let selectedColor = UIColor.black
     let unselectedColor = UIColor.lightGray
+    
+    var delegate: TabBarViewDelegate?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -124,6 +130,7 @@ class TabBarView: UIView {
         
         if let index = tabStacks.firstIndex(of: view) {
             self.changeTabSelection(index)
+            delegate?.tabControl(didChange: selectedIndex)
         }
     }
 }

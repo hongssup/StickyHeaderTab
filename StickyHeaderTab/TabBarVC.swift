@@ -71,7 +71,9 @@ extension TabBarVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         if kind == UICollectionView.elementKindSectionHeader {
             guard let header = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: "tabHeader", for: indexPath) as? TabHeader else { return UICollectionReusableView() }
-            
+            header.callBack = { index in
+                self.moveToScroll(index)
+            }
             return header
         }
         return UICollectionReusableView()
@@ -94,9 +96,16 @@ extension TabBarVC: UICollectionViewDelegateFlowLayout {
     }
 }
 
+extension TabBarVC {
+    @objc func moveToScroll(_ index: Int) {
+        self.collectionView.scrollToItem(at: IndexPath(item: index, section: 1), at: .top, animated: true)
+    }
+}
+
 // MARK: - TabHeader
 class TabHeader: UICollectionReusableView {
     let tabBarView = TabBarView()
+    var callBack: ((_ index: Int) -> Void)?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -113,5 +122,13 @@ class TabHeader: UICollectionReusableView {
         tabBarView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }
+        tabBarView.delegate = self
+    }
+}
+
+extension TabHeader: TabBarViewDelegate {
+    func tabControl(didChange index: Int) {
+        debugPrint("didChange index: \(index)")
+        self.callBack?(index)
     }
 }

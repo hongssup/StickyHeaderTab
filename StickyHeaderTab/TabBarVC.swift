@@ -9,6 +9,7 @@ import UIKit
 import SnapKit
 
 class TabBarVC: UIViewController {
+    var tabHeader: TabHeader?
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -38,7 +39,16 @@ class TabBarVC: UIViewController {
 }
 
 extension TabBarVC: UICollectionViewDelegate {
-    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let visibleIndexPathList = self.collectionView.visibleCells.compactMap { (visibleCell) -> Int? in
+            return self.collectionView.indexPath(for: visibleCell)?.item
+        }
+        
+        let sortList = visibleIndexPathList.sorted()
+        guard let firstSection = sortList.first else { return }
+        
+        self.tabHeader?.selectedIndex = firstSection
+    }
 }
 
 extension TabBarVC: UICollectionViewDataSource {
@@ -74,6 +84,7 @@ extension TabBarVC: UICollectionViewDataSource {
             header.callBack = { index in
                 self.moveToScroll(index)
             }
+            self.tabHeader = header
             return header
         }
         return UICollectionReusableView()
@@ -106,6 +117,11 @@ extension TabBarVC {
 class TabHeader: UICollectionReusableView {
     let tabBarView = TabBarView()
     var callBack: ((_ index: Int) -> Void)?
+    fileprivate var selectedIndex: Int = 0 {
+        didSet {
+            tabBarView.changeTabSelection(selectedIndex)
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
